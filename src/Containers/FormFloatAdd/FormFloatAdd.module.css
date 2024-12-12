@@ -1,0 +1,126 @@
+.modal {
+  --root-background-color: #fff;
+  border-radius: 10px;
+  --root-font-color: #fff;
+
+}
+
+.modal [class*="_title"] {
+  color: #000;
+}
+
+.root {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  gap: 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.root .input input {
+  min-width: 120px;
+  min-height: 46px;
+  --input-padding: 0px 16px;
+  box-sizing: border-box;
+  --input-border-color: #e5e5e5;
+  background-color: #e5e5e5;
+  --input-color: #000;
+  --input-border-color-focused: #e5e5e5;
+  font-family: 'Unbounded';
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.root .select {
+  width: 100%;
+  margin-top: -13px;
+  --label-background-color: transparent;
+  grid-column: span 2;
+  --option-color: #000;
+  --root-focus-border-color: #e5e5e5;
+  font-family: "Unbounded";
+  --label-color: #9c9aa5;
+
+}
+
+.root .select>button {
+  background-color: #fff;
+  color: #000;
+  z-index: 100;
+  font-family: "Unbounded";
+}
+
+.root .select>[class*="_options"] {
+  background-color: #fff;
+  font-family: "Unbounded";
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  grid-column: span 2;
+  color: #000;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file_label {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls button {
+  border: none;
+  width: 100px;
+  height: 46px;
+  border-radius: 5px;
+  background-color: #323232;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+.controls button:disabled{
+  cursor: not-allowed;
+}
+
+.select_rooms {
+  composes: select;
+}
+
+.root .select_rooms {
+  grid-column: span 1;
+  margin-top: -4px;
+  height: 45px;
+  --root-width: 220px;
+}
+
+.modal .button_save {
+  background-color: #ff2b1c;
+}
+.modal .button_save:disabled{
+  background-color: #ff9891;
+}
+.modal .button_cancel {
+  background-color: #e5e5e5;
+  color: #000;
+}

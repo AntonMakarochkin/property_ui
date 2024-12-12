@@ -1,0 +1,57 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5e5;
+  gap: 15px;
+  font-family: "Unbounded";
+  height: 100vh;
+
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 30px;
+  margin: 150px 89px 0px 89px;
+}
+
+.container {
+  width: 100%;
+  min-height: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+:is(.map, .address) {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.map iframe {
+  border-radius: 20px;
+}
+
+.address {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background: url(../../assets/Busines.jpg) no-repeat;
+  background-size: cover;
+  padding: 20px;
+  color: #fff;
+  font-size: 30px;
+  
+
+}
+
+.address span {
+  background-color: rgba(0, 0, 0, 0.200);
+  backdrop-filter: blur(2px);
+  padding: 10px;
+  border-radius: 6px;
+}

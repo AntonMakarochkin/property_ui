@@ -1,0 +1,248 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  gap: 16px;
+  padding: 10px 89px 0px 89px;
+  font-family: "Unbounded";
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  position: relative;
+  font-size: 45px;
+  font-weight: 700;
+  font-family: "Unbounded";
+}
+
+.name::after{
+  content: attr(data-count);
+  position: absolute;
+  bottom: 8px;
+  right: -160px;
+  color: #9c9aa5;
+  font-size: 20px;
+}
+
+.info {
+  position: relative;
+  padding: 30px;
+  background: url(../../assets/PageMainBackground.png) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height:
+    350px;
+  box-sizing: border-box;
+
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: #fff;
+  font-family: "Unbounded";
+
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.rooms_quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rooms_quantity>button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+  padding: 12px 16px;
+  font-family: "Unbounded";
+
+}
+
+.rooms_quantity>button.active {
+  background-color: #5b5d67;
+  color: #fff;
+}
+
+.rooms_quantity>button.active:hover {
+  background-color: #44454c;
+}
+
+.rooms_quantity .studio {
+  border-radius: 25px;
+}
+
+.rooms_quantity>button:hover {
+  background-color: #d0d1d7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+:is(.property_price, .property_area) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 0px 10px;
+  width: 300px;
+  height: 36px;
+}
+
+:is(.property_price, .property_area) span {
+  color: #8E9099;
+}
+
+:is(.property_price, .property_area) input {
+  border: none;
+  outline: none;
+  width: 90px;
+  margin-top: 4px;
+}
+
+:is(.property_price, .property_area)>hr {
+  height: 26px;
+  border: none;
+  border-left: 1px solid #EAEAEA;
+  width: 1px;
+  margin: 0px;
+}
+
+.filters__active {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f5f5f5;
+}
+
+.filters__active>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #5b5d67;
+  border-radius: 10px;
+  height: 30px;
+  color: #fff;
+  padding: 0px 8px;
+}
+
+.delete {
+  width: 10px;
+  height: 10px;
+}
+
+.button_clear {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: #7476801a;
+  ;
+  cursor: pointer;
+}
+
+.button_clear svg {
+  --icon-fill-color: #8e9099;
+
+}
+
+.total_floats {
+  font-size: 24px;
+ color: #8e9099;
+ font-weight: 600;
+}
+
+.root .select {
+  margin-top: -13px;
+  --label-background-color: transparent;
+  font-family: "Unbounded";
+  --label-color: #9c9aa5;
+}
+
+.root .select>button {
+  background-color: #fff;
+  z-index: 100;
+  font-family: "Unbounded";
+}
+
+.root .select>[class*="_options"] {
+  background-color: #fff;
+  font-family: "Unbounded";
+}
+
+.property_price::after {
+  content: 'Стоимость, млн ₽';
+  position: absolute;
+  top: -18px;
+  left: 5px;
+  font-size: 14px;
+  color: #9c9aa5;
+}
+
+.property_area::after {
+  content: 'Площадь, м2';
+  position: absolute;
+  top: -18px;
+  left: 5px;
+  font-size: 14px;
+  color: #9c9aa5;
+}
+
+.button_add {
+  width: 300px;
+  height: 36px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ff2b1c;
+  color: #fff;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 600;
+  -webkit-box-shadow: 10px 1px 14px -9px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 10px 1px 14px -9px rgba(0, 0, 0, 0.52);
+  box-shadow: 10px 1px 14px -9px rgba(0, 0, 0, 0.52);
+  font-family: "Unbounded";
+}
+
+.button_add:not(:disabled):hover {
+  background-color: #e80f00;
+}
+.button_add:disabled {
+  background-color: #ff9891;
+  cursor: not-allowed;
+}
+
+@media (width < 1680px) {
+  .name {
+    font-size: 30px;
+  }
+  .name::after{
+    bottom: 3px;
+    right: -125px;
+    color: #9c9aa5;
+    font-size: 16px;
+  }
+  .button_add {
+    font-size: 18px;
+  }
+}

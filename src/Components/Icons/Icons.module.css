@@ -1,0 +1,11 @@
+:global(.kit_icon) {
+	--icon-fill-color: #f5f5f5;
+}
+
+.icon_path {
+	fill: var(--icon-fill-color);
+}
+
+.icon_stroke {
+	stroke: var(--icon-fill-color);
+}

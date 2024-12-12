@@ -1,0 +1,16 @@
+@import url(palete.css);
+
+::-webkit-scrollbar {
+	width: 0.25em;
+	height: 0.25em;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--ui-gray-6);
+	border-radius: 0.125em;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--ui-gray-10);
+	border-radius: 0.125em;
+}

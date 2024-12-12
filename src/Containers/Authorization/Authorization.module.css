@@ -1,0 +1,108 @@
+.modal {
+  --root-background-color: #fff;
+  border-radius: 10px;
+  --root-font-color: #fff;
+}
+
+
+.modal [class*="_title"] {
+  color: #000;
+}
+
+.modal [class*="_header"] button:hover {
+  background-color: transparent;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-sizing: border-box;
+  color: #000;
+}
+
+.content .input input {
+  width: 318px;
+  min-height: 46px;
+  --input-padding: 0px 16px;
+  box-sizing: border-box;
+  --input-border-color: #e5e5e5;
+  background-color: #e5e5e5;
+  --input-color: #000;
+  --input-border-color-focused: #e5e5e5;
+  font-family: 'Unbounded';
+}
+
+.content .input_password input {
+  padding-right: 40px;
+}
+
+.button {
+  font-size: 16px;
+  width: 318px;
+  background-color: #ff2b1c;
+  border: none;
+  color: #fff;
+  min-height: 46px;
+  font-family: 'Unbounded';
+}
+
+.password {
+  position: relative;
+}
+
+:is(.button_show_password, .button_show_password:hover) {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 1;
+  min-height: 46px;
+  border: none;
+  background-color: transparent;
+}
+
+.button:hover {
+  background-color: #ff4639;
+  transition: .3s;
+  color: #fff;
+}
+
+.error {
+  height: 24px;
+  color: red;
+}
+
+.button__back {
+  color: #fff;
+  padding: 0px;
+  margin: 0px;
+  background-color: transparent;
+  border: none;
+  font-size: 17px;
+}
+
+@media (width <=750px) {
+  .modal {
+    padding: 10px;
+  }
+
+  .content .input input {
+    width: 230px;
+    --input-padding: 0px 8px;
+
+  }
+
+  .content .input_password input {
+    padding-right: 40px;
+  }
+
+  .button {
+    width: 230px;
+  }
+
+  :global(.kit_modal) {
+    min-width: 278px;
+  }
+}

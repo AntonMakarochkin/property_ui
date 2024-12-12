@@ -1,0 +1,171 @@
+@import url(../../palete.css);
+@import url(../../scrollbar.css);
+
+:global(.kit_select) {
+	--root-width: 300px;
+	--root-height: 2em;
+	--root-font-size: inherit;
+	--root-font-weight: 375;
+	--root-border-color: var(--ui-gray-20);
+
+	--root-icon-fill-color: var(--ui-gray-20);
+	--root-hover-border-color: var(--ui-gray-50);
+	--root-focus-border-color: var(--ui-yellow-60);
+
+	--root-disabled-hover-border-color: var(--ui-gray-8);
+	--root-disabled-background-color: var(--ui-gray-2);
+	--root-disabled-border-color: var(--ui-gray-8);
+
+	--option-background-color: var(--ui-gray-0);
+	--option-color: var(--gray-gray-90);
+	--option-hover-background-color: var(--ui-yellow-10);
+	--option-selected-background-color: var(--ui-yellow-20);
+
+	--label-background-color: var(--ui-gray-0);
+	--label-color: var(--ui_black_400);
+	--placeholder-color: var(--ui-gray-20);
+	--requred-text-color: var(--ui-red-60);
+
+	--caption-font-size: 0.875em;
+
+	display: inline-block;
+	font-family: 'Unbounded';
+}
+
+.root {
+	width: var(--root-width);
+}
+
+.button {
+	box-sizing: border-box;
+	align-items: center;
+	border: 1px solid var(--root-border-color);
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: var(--root-font-weight);
+	line-height: 14px;
+	color: var(--gray-gray-90);
+	font-size: var(--root-font-size);
+
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 0.75em;
+	padding: 0.375em 0.625em 0.375em 0.775em;
+}
+
+.button:disabled {
+	background-color: var(--root-disabled-background-color);
+	border: 1px solid var(--root-disabled-border-color);
+}
+
+.label_disabled > .required_mark {
+	color: var(--label-color);
+}
+
+.button:hover {
+	border: 1px solid var(--root-hover-border-color);
+}
+
+.button:disabled:hover {
+	border: 1px solid var(--root-disabled-hover-border-color);
+}
+
+.button:focus {
+	border: 1px solid var(--root-focus-border-color);
+}
+
+.required_field {
+	border: 1px solid var(--requred-text-color);
+}
+
+.required_mark {
+	font-size: 12px;
+	color: var(--requred-text-color);
+}
+
+.required_text {
+	font-size: 12px;
+	color: var(--requred-text-color);
+	position: absolute;
+}
+
+.arrow {
+	width: 16px;
+	height: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.arrow_open {
+	rotate: 180deg;
+}
+
+.icon {
+	--icon-fill-color: var(--root-icon-fill-color) !important;
+}
+
+.placeholder {
+	color: var(--placeholder-color);
+	font-size: var(--root-font-size);
+}
+
+.label {
+	padding: 0 0.25em 0 0.25em;
+	display: flex;
+	width: min-content;
+	gap: 0.125em;
+	border-radius: 4px;
+	background-color: var(--label-background-color);
+	color: var(--label-color);
+	white-space: nowrap;
+	font-size: var(--caption-font-size);
+}
+
+.label_outlined {
+	top: 0.35em;
+	left: 1em;
+	position: relative;
+}
+
+.label_contained {
+	display: none;
+}
+
+.options {
+	max-height: 20em;
+	overflow-y: auto;
+	position: absolute;
+	min-width: min-content;
+	border-radius: 2px;
+	padding: 0.375em 0;
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	width: var(--root-width);
+	box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.1);
+}
+
+.option__button {
+	cursor: pointer;
+	padding: 0.55em 1.075em 0.55em 0.925em;
+	color: var(--option-color);
+	border: none;
+	font-weight: var(--root-font-weight);
+	line-height: 14px;
+	font-size: var(--root-font-size);
+	font-family: 'Unbounded';
+	text-align: start;
+	background-color: var(--option-background-color);
+}
+
+.option__button:hover {
+	background-color: var(--option-hover-background-color);
+}
+
+.selected {
+	background-color: var(--option-selected-background-color);
+}

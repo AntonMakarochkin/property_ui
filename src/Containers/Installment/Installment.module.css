@@ -1,0 +1,62 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 76px;
+  height: 350px;
+  margin: 0px 100px;
+  padding: 0px 89px;
+  background: url(../../assets/Banner.png) no-repeat;
+  background-size: cover;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+.percents {
+  position: relative;
+  background-color: #fff;
+  padding: 5px 19px;
+  color: #7369D0;
+  border-radius: 15px;
+  font-size: 45px;
+  font-weight: 700;
+  grid-column: span 2;
+}
+
+.percents::after{
+  content: attr(data-banks);
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  font-size: 35px;
+  color: #fff;
+}
+
+.params{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 700px;
+}
+
+.params > * {
+  background-color: #FFFFFF36;
+  color: #fff;
+  padding: 5px 19px;
+  border-radius: 30px;
+  text-wrap: nowrap;
+  font-weight: 700;
+  width: auto;
+}
+
+@media (width < 1730px) {
+  .percents {
+    font-size: 30px;
+  }
+  .percents::after{
+    content: attr(data-banks);
+    font-size: 20px;
+    top: 50px;
+    left: 70px;
+  }
+}

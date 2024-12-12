@@ -1,0 +1,72 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+}
+
+.root .image {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  width: 100%;
+  height: 450px;
+  padding: 30px;
+  background-size: cover;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 500;
+  text-wrap: nowrap;
+}
+
+.parameters {
+  display: flex;
+  gap: 15px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.parameters>* {
+  color: #717171;
+  text-wrap: nowrap;
+}
+
+.type {
+  padding: 7px 12px;
+  border-radius: 5px;
+  background-color: #FE9B27;
+  color: #fff;
+  font-weight: 500;
+}
+
+.top {
+  padding: 7px 12px;
+  border-radius: 5px;
+  background-color: #6C76D2;
+  color: #fff;
+  font-weight: 500;
+}
+
+.link {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 99%;
+  background-color: transparent;
+  z-index: 100;
+}
+
+
+@media (width < 1730px) {
+  .name {
+    font-size: 25px;
+  }
+  .parameters {
+    font-size: 16px;
+  }
+}

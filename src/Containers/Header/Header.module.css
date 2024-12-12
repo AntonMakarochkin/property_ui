@@ -1,0 +1,137 @@
+.root {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	width: calc(100% - 178px);
+	height: 79px;
+	margin: 0px 89px;
+	padding: 0px 30px;
+	background-color: #fff;
+	z-index: 10;
+	box-sizing: border-box;
+	border-radius: 40px;
+  /* margin-left: 20px; */
+	font-family: "Unbounded";
+}
+
+.telegram {
+	width: 30px;
+	height: 30px;
+	margin-left: auto;
+
+}
+
+.root .telegram {
+	--icon-fill-color: #000;
+	cursor: pointer;
+}
+
+.root .telegram:hover {
+	--icon-fill-color: #ff2b1c;
+}
+
+.name {
+	margin-right: auto;
+	font-weight: 700;
+	font-size: 45px;
+}
+
+.button_auth {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.button_auth:hover {
+	background-color: transparent;
+}
+
+.button_auth .icon_profile {
+	fill: none;
+	stroke: #000;
+	--icon-fill-color: transparent;
+}
+
+.button_auth:hover .icon_profile {
+	fill: transparent;
+	stroke: #ff2b1c;
+	--icon-fill-color: transparent;
+	transition: 0.3s;
+}
+
+.button_auth {
+	anchor-name: --anchor-el;
+	position: relative;
+}
+
+.auth_menu {
+	position-anchor: --anchor-el;
+	inset-area: bottom center;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 5px;
+	width: 180px;
+	box-shadow: 0px 4px 25px 0px #00000026;
+	background-color: #161616;
+	border-right: 3px solid #323232;
+	border-left: 3px solid #323232;
+	border-radius: 10px;
+}
+
+.auth_menu>button {
+	height: 2rem;
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: "Unbounded";
+}
+
+.auth_menu>button:hover {
+	color: #ff2b1c;
+}
+
+.auth_menu a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.auth_menu a:hover {
+	color: #ff2b1c;
+}
+
+.root a {
+	text-decoration: none;
+	font-size: 25px;
+	color: #9b9b9b;
+	font-weight: 600;
+}
+
+.root a:hover {
+	color: #000;
+	transition: 0.3s;
+}
+
+.root .active {
+	color: #000;
+}
+
+
+@media (width < 1730px) {
+	.root a {
+		font-size: 18px;
+	}
+	.name {
+		font-size: 30px;
+	}
+	
+}

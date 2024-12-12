@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 0px 100px;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 700;
+  padding-bottom: 16px;
+}
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+@media (width < 1730px) {
+  .title {
+    font-size: 30px;
+  }
+}

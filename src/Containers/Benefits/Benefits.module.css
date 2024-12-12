@@ -1,0 +1,57 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  gap: 20px;
+  padding: 0px 89px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon {
+  display: grid;
+  position: relative;
+  padding: 16px;
+  height: 210px;
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  box-sizing: border-box;
+  flex: 1;
+  overflow: hidden;
+}
+
+.root img {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+@media (width < 1730px) {
+  .description {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+}
