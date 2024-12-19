@@ -2,6 +2,8 @@ import { createEvent } from 'effector';
 
 export const resetFilterEv = createEvent();
 
+export const resetFiltersInResidenceEv = createEvent();
+
 export const changeOpenModalEv = createEvent<boolean>();
 
 export const changeApartmentsFormEv = createEvent<{key: string, value: any}>();

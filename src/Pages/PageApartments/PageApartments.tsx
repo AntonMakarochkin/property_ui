@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { getApartmentsFx } from '../../Models/apartments/effects';
 import Loader from '../../Components/Loader';
 import { getResidencesHandbookFx } from '../../Models/residences/effects';
+import HeaderBanner from '../../Containers/HeaderBanner';
 function PageApartments() {
 	const [apartments] = useUnit([$apartments]);
 	const { loading, searching } = useApartmentsFilters();
@@ -25,13 +26,7 @@ function PageApartments() {
 	return (
 		<div className={clsx(styles.root)}>
 			<Header />
-			<section className={styles.info}>
-				<div className={styles.text}>
-					<span className={styles.double_column}>Все новостройки</span>
-					<img className={styles.flag} src="src\assets\LogoTurkey.png" alt="" />
-					<span>Турции от застройщика</span>
-				</div>
-			</section>
+			<HeaderBanner />
 			<ApartmentFilters />
 			<FormFloatAdd />
 			{!loading && !searching ? (

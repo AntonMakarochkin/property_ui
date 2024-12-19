@@ -7,12 +7,14 @@ import clsx from 'clsx';
 import {
 	changeOpenModalEv,
 	resetFilterEv,
+	resetFiltersInResidenceEv,
 } from '../../Models/apartments/events';
 import { useAuthorization } from '../../Facades/useAuthorization';
 import { $apartments } from '../../Models/apartments/state';
 import { useUnit } from 'effector-react';
+import { ApartmentFiltersProps } from './types';
 
-function ApartmentFilters() {
+function ApartmentFilters({ disabledProject }: ApartmentFiltersProps) {
 	const [apartments] = useUnit([$apartments]);
 	const {
 		filters,
@@ -21,8 +23,16 @@ function ApartmentFilters() {
 		selectResidences,
 	} = useApartmentsFilters();
 	const { authorizationStatus } = useAuthorization();
-
+	const residenceFilterActive = filters.residence !== '0' && !disabledProject;
 	const apartmentsCount = apartments.length;
+
+	function handlerResetFilters() {
+		if (disabledProject) {
+			resetFiltersInResidenceEv();
+		} else {
+			resetFilterEv();
+		}
+	}
 	// const apartmentsCountText = apartmentsCount === 1 ? 'планировка' : 'планировки'
 	return (
 		<div className={styles.root}>
@@ -53,6 +63,7 @@ function ApartmentFilters() {
 					]}
 					type="behind"
 					value={filters.residence}
+					disabled={disabledProject}
 				/>
 				<div className={styles.rooms_quantity}>
 					<button
@@ -141,17 +152,21 @@ function ApartmentFilters() {
 				{/* <span className={styles.total_floats}>Найдено {apartmentsCount} {apartmentsCount ? apartmentsCountText : 'планировок'}</span> */}
 			</div>
 			<div className={styles.filters__active}>
-				{(filters.rooms?.length || filters.residence !== '0') && (
+				{(filters.rooms?.length || residenceFilterActive) && (
 					<button
 						className={styles.button_clear}
-						onClick={() => resetFilterEv()}
+						onClick={handlerResetFilters}
 					>
 						<SymbolDelete className={styles.delete} />
 					</button>
 				)}
-				{filters.residence !== '0' && (
+				{residenceFilterActive && (
 					<div>
-						{selectResidences.filter((item) => item.id === filters.residence)[0].name}
+						{
+							selectResidences.filter(
+								(item) => item.id === filters.residence,
+							)[0].name
+						}
 					</div>
 				)}
 				{filters.rooms?.map((item) => (

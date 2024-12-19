@@ -2,19 +2,29 @@ import { useResidences } from '../../Facades/useResidences';
 import clsx from 'clsx';
 import Header from '../../Containers/Header';
 import FloatFilters from '../../Containers/ApartmentFilters/ApartmentFilters';
-import Card from '../../Components/Card';
 import Swiper from '../../Containers/Swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from './PageResidence.module.css';
 import SwiperBenefits from '../../Containers/SwiperBenefits';
+import { useApartmentsFilters } from '../../Facades/useApartmentsFilters';
+import { useEffect } from 'react';
+import { useUnit } from 'effector-react';
+import { $apartments } from '../../Models/apartments/state';
+import ApartmentCard from '../../Components/ApartmentCard';
+import Loader from '../../Components/Loader';
 
 function PageResidence() {
 	const { currentResidence } = useResidences();
 	const { name, description, parameters } = currentResidence;
+	const { handlerSetFilterByKey } = useApartmentsFilters();
+	const [apartments] = useUnit([$apartments]);
+	const { loading, searching } = useApartmentsFilters();
+	useEffect(() => {
+		handlerSetFilterByKey('residence', name);
+	}, []);
 	const [area, remoteness, priceFrom] = parameters;
-	console.log(currentResidence);
 	return (
 		<div className={clsx(styles.root)}>
 			<Header />
@@ -34,12 +44,18 @@ function PageResidence() {
 				<Swiper />
 			</section>
 			<SwiperBenefits />
-			<FloatFilters />
-			<div className={styles.catalog}>
-				<Card />
-				<Card />
-				<Card />
-			</div>
+			<FloatFilters disabledProject />
+			{!loading && !searching ? (
+				<div className={styles.catalog}>
+					{apartments.map((apartment) => (
+						<ApartmentCard key={apartment.id} cardInfo={apartment} />
+					))}
+				</div>
+			) : (
+				<div className={styles.container_loader}>
+					<Loader className={styles.loader} />
+				</div>
+			)}
 		</div>
 	);
 }

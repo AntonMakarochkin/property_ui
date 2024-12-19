@@ -7,6 +7,7 @@ import Benefits from '../../Containers/Benefits';
 import Consultation from '../../Containers/Consultation';
 import { useEffect } from 'react';
 import { getResidencesFx } from '../../Models/residences/effects';
+import HeaderBanner from '../../Containers/HeaderBanner';
 
 function PageMain() {
 	useEffect(() => {
@@ -15,16 +16,7 @@ function PageMain() {
 	return (
 		<div className={clsx(styles.root)}>
 			<Header />
-			<section className={styles.info}>
-				<div className={styles.text}>
-					<span className={styles.double_column}>Все новостройки</span>
-					<img className={styles.flag} src="src\assets\LogoTurkey.png" alt="" />
-					<span>Турции от застройщика</span>
-				</div>
-				{/* <div className={styles.available}>
-					ВСЕ ВОЗМОЖНО - даже в другой стране
-				</div> */}
-			</section>
+			<HeaderBanner />
       <Consultation />
 			<Benefits />
 			<ResidencesCatalog />

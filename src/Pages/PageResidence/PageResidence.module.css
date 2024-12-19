@@ -1,9 +1,13 @@
 .root {
   display: flex;
   flex-direction: column;
-  background-color: #f5f5f5;
   gap: 35px;
+  position: relative;
   padding-bottom: 50px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .info {
@@ -80,7 +84,25 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   padding: 0px 89px;
+  background-color: #f5f5f5;
 }
+.root .loader {
+  position: relative;
+  width: 180px;
+  min-height: 180px;
+  margin: auto auto;
+  --root-background-color: #ff9891;
+  --root-border-bottom-color: #ff2b1c;
+}
+
+.root .loader::after {
+  border-width: 15px;
+}
+
+.root .loader::before {
+  border-width: 15px;
+}
+
 
 @media (width < 1680px) {
   .name {
@@ -101,4 +123,10 @@
   .root {
     gap: 15px;
   }
+}
+
+
+.container_loader {
+  width: 100%;
+  height: 250px;
 }

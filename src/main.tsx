@@ -2,7 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageMain from "./Pages/PageMain/PageMain.tsx";
-import PageFloatAdd from "./Pages/PageFloatAdd/PageFloatAdd.tsx";
 import PageResidence from "./Pages/PageResidence/PageResidence.tsx";
 import PageApartments from "./Pages/PageApartments/PageApartments.tsx";
 import PageResidenceAdd from "./Pages/PageResidenceAdd/PageResidenceAdd.tsx";
@@ -14,10 +13,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <PageMain />,
-  },
-  {
-    path: "/page_flat_add",
-    element: <PageFloatAdd />,
   },
   {
     path: "/residence_add",
