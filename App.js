@@ -111,6 +111,6 @@ app.get('/check_user_reset/:id', function (req, res) {
 	// 	});
 	// });
 
-app.listen(3000, function () {
+app.listen(8086, function () {
 	console.log('started');
 });
