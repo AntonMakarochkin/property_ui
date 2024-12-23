@@ -1,6 +1,4 @@
-import React from 'react';
-
 export type PortalProps = {
-	children?: React.ReactNode;
+	children: any;
 	wrapperId?: string;
 };

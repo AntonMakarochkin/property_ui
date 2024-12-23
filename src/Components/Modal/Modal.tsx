@@ -41,7 +41,7 @@ function Modal({
 	style,
 	className,
 	renderControls,
-}: ModalProps) {
+}: ModalProps): any {
 	const refModal = useRef<HTMLDivElement | null>(null);
 
 	// useOnClickOutside([refModal], () => onClose());

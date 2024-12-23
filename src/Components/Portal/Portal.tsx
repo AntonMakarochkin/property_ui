@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { PortalProps } from './types';
 
-function Portal({ children, wrapperId = 'portal_root' }: PortalProps) {
+function Portal({ children, wrapperId = 'portal_root' }: PortalProps): any {
 	const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(
 		null,
 	);
