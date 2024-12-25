@@ -25,6 +25,7 @@ function PageResidence() {
 		handlerSetFilterByKey('residence', name);
 	}, []);
 	const [area, remoteness, priceFrom] = parameters;
+	const showDataTip = !loading && !searching && apartments.length === 0;
 	return (
 		<div className={clsx(styles.root)}>
 			<Header />
@@ -56,6 +57,7 @@ function PageResidence() {
 					<Loader className={styles.loader} />
 				</div>
 			)}
+						{showDataTip && <div className={styles.tip}>Нет данных по квартирам</div>}
 		</div>
 	);
 }
