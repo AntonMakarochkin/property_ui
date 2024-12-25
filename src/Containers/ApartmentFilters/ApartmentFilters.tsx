@@ -13,19 +13,20 @@ import { useAuthorization } from '../../Facades/useAuthorization';
 import { $apartments } from '../../Models/apartments/state';
 import { useUnit } from 'effector-react';
 import { ApartmentFiltersProps } from './types';
+import { getApartmentsFx } from '../../Models/apartments/effects';
 
 function ApartmentFilters({ disabledProject }: ApartmentFiltersProps) {
-	const [apartments] = useUnit([$apartments]);
+	const [apartments] = useUnit([$apartments, getApartmentsFx.pending]);
 	const {
 		filters,
 		handlerSetFilterByKey,
 		handlerSetFilterRooms,
 		selectResidences,
+		searching,
 	} = useApartmentsFilters();
 	const { authorizationStatus } = useAuthorization();
 	const residenceFilterActive = filters.residence !== '0' && !disabledProject;
-	const apartmentsCount = apartments.length;
-
+	const apartmentsCount = !searching ? apartments.length : '...';
 	function handlerResetFilters() {
 		if (disabledProject) {
 			resetFiltersInResidenceEv();
@@ -33,6 +34,7 @@ function ApartmentFilters({ disabledProject }: ApartmentFiltersProps) {
 			resetFilterEv();
 		}
 	}
+	console.log(searching)
 	// const apartmentsCountText = apartmentsCount === 1 ? 'планировка' : 'планировки'
 	return (
 		<div className={styles.root}>

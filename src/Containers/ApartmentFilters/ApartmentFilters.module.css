@@ -56,6 +56,11 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: center;
   background-color: #f5f5f5;
+  gap: 16px;
+}
+
+.filters > * {
+  width: 100%;
 }
 
 .rooms_quantity {

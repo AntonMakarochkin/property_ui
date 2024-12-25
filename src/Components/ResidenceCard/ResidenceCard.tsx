@@ -18,9 +18,9 @@ function ResidenceCard({ cardInfo }: ResidenceCardProps) {
 				{/* {parameters.map((parameter) => (
           <span>{parameter}</span>
         ))} */}
-				<span>от {priceFrom}р</span>
+				<span>от {priceFrom}$</span>
 				<span>от {area}м2</span>
-				<span>{remoteness} до моря</span>
+				<span>{remoteness} минут до моря</span>
 			</div>
 		</div>
 	);

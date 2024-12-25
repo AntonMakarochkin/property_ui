@@ -1,5 +1,5 @@
 import { sample } from "effector";
-import { changeApartmentsFormEv, changeOpenModalEv, resetFilterEv, toggleSearchingEv } from "./events";
+import { changeApartmentsFormEv, changeOpenModalEv, resetFilterEv, resetFiltersInResidenceEv, toggleSearchingEv } from "./events";
 import { $apartmentsForm, $filters, $modalOpen } from "./state";
 import { getApartmentsFx, setFilterFx } from "./effects";
 import { debounce } from "../../Shared/utils/debounce";
@@ -10,7 +10,7 @@ const getApartmentsFxDebounce = debounce((some) => {
 }, 2000)
 
 sample({
-  clock: [setFilterFx.doneData, resetFilterEv],
+  clock: [setFilterFx.doneData, resetFilterEv, resetFiltersInResidenceEv],
   source: $filters,
   fn: (state) => {
     const activeFilters = getActiveFilters(state);

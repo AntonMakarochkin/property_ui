@@ -4,6 +4,7 @@ import styles from './ApartmentCard.module.css';
 
 function ApartmentCard({ cardInfo }: ApartmentCardProps) {
 	const { floor, residence, m2, price, url, year, rooms } = cardInfo;
+	const meterPrice = Number(price.replace(" ", '')) / Number(m2);
 	return (
 		<div className={styles.root}>
 			<div className={styles.title}>
@@ -16,7 +17,7 @@ function ApartmentCard({ cardInfo }: ApartmentCardProps) {
 				<mark>{price} $</mark>
 			</div>
 			<div className={styles.info}>
-				<span>7650$/м&#178;</span>
+				<span>{meterPrice.toFixed(0)}$/м&#178;</span>
 				<span>Год сдачи {year}</span>
 				<span>{floor}/17 этаж</span>
 			</div>

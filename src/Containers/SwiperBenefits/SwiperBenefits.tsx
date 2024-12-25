@@ -6,13 +6,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from './SwiperBenefits.module.css';
 
+
 function SwiperBenefits() {
 	const { currentResidence } = useResidences();
 	const { categories } = currentResidence;
 	return (
 		<Swiper
 			className={styles.swiper}
-			spaceBetween={50}
+			spaceBetween={40}
 			slidesPerView={4}
 			// loop={true}
 			// onSlideChange={() => console.log('slide change')}
