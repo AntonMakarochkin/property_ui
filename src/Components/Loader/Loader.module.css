@@ -17,6 +17,7 @@
 	content: '';
 	border-radius: 50%;
 }
+
 .root::before {
 	border: 6px solid var(--root-background-color);
 	border-bottom-color: var(--root-border-bottom-color);

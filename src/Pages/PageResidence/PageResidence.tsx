@@ -14,6 +14,7 @@ import { useUnit } from 'effector-react';
 import { $apartments } from '../../Models/apartments/state';
 import ApartmentCard from '../../Components/ApartmentCard';
 import Loader from '../../Components/Loader';
+import HeaderMobile from '../../Containers/HeaderMobile';
 
 function PageResidence() {
 	const { currentResidence } = useResidences();
@@ -28,7 +29,8 @@ function PageResidence() {
 	const showDataTip = !loading && !searching && apartments.length === 0;
 	return (
 		<div className={clsx(styles.root)}>
-			<Header />
+			<Header /> 
+			<HeaderMobile />
 			<section className={styles.info}>
 				<div className={styles.name}>
 					{name}
@@ -57,7 +59,7 @@ function PageResidence() {
 					<Loader className={styles.loader} />
 				</div>
 			)}
-						{showDataTip && <div className={styles.tip}>Нет данных по квартирам</div>}
+			{showDataTip && <div className={styles.tip}>Нет данных по квартирам</div>}
 		</div>
 	);
 }

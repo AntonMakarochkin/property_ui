@@ -1,13 +1,14 @@
 import axios from 'axios';
+import { User } from '../../Models/authorization/types';
 
-export async function fetchAuthorizeUser(params: any): Promise<any> {
+export async function fetchAuthorizeUser(params: any){
 	const response = axios.post('http://91.197.98.253:8086/authorize_user', {
 		params,
 	});
 	return response;
 }
 
-export async function fetchAuthorizeUserById(id: number): Promise<any> {
+export async function fetchAuthorizeUserById(id: number) {
 	const response = await axios.get(
 		`http://91.197.98.253:8086/authorize_user_by_id/${id}`,
 	);
@@ -32,19 +33,19 @@ export async function fetchResetUser(email: string) {
 	return response;
 }
 
-export async function fetchAddUser(user: any): Promise<any> {
+export async function fetchAddUser(user: Partial<User>) {
 	const response = axios.post('http://91.197.98.253:8086/add_user', {
 		user,
 	});
 	return response;
 }
 
-// export async function checkUserReseting(id: string) {
-// 	const response = await axios.get(
-// 		`http://91.197.98.253:8086/check_user_reset/${id}`,
-// 	);
+export async function fetchChangeUser(user: Partial<User>) {
+	const response = axios.post('http://91.197.98.253:8086/change_user', {
+		user,
+	});
+	return response;
+}
 
-// 	return response;
-// }
 
 export default {};

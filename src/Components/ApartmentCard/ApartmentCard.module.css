@@ -19,9 +19,20 @@
   -webkit-box-shadow: 10px 1px 14px -9px rgba(0, 0, 0, 0.52);
   -moz-box-shadow: 10px 1px 14px -9px rgba(0, 0, 0, 0.52);
   box-shadow: 10px 1px 14px -9px rgba(0, 0, 0, 0.52);
+  background-color: transparent;
 
 }
 
+.root .price {
+  width: 100%;
+}
+.root .info {
+  font-family: 'Unbounded';
+}
+.root .title {
+  width: 100%;
+
+}
 :is(.title, .price) {
   display: flex;
   align-items: center;
@@ -62,5 +73,41 @@
 @media (width < 1680px) {
   .price {
     font-size: 16px;
+  }
+}
+
+@media (width < 880px) {
+  .title {
+    font-size: 20px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .info {
+    font-size: 12px;
+  }
+}
+
+@media (width < 680px) {
+  .title {
+    font-size: 23px;
+  }
+  .price {
+    font-size: 16px;
+  }
+  .info {
+    font-size: 16px;
+  }
+}
+
+@media (width < 480px) {
+  .title {
+    font-size: 18px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .info {
+    font-size: 13px;
   }
 }

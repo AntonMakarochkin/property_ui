@@ -131,4 +131,86 @@
   .contacts>span {
     font-size: 18px;
   }
+
+
+}
+
+@media (width < 1080px) {
+  .root {
+    margin: 0px 40px;
+  }
+  .information {
+    flex-direction: column;
+  }
+
+  .form {
+    grid-template-columns: 300px 1fr;
+  }
+
+  .textarea {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .phone {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  .button_submit {
+    grid-column: span 2;
+  }
+}
+
+
+@media (width < 670px) {
+  .form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .information {
+    gap: 16px;
+  }
+  .textarea {
+    grid-column: span 1;
+  }
+
+  .phone {
+    grid-column-start: 1;
+  }
+
+  .button_submit {
+    grid-column: span 1;
+  }
+  .contacts>span{
+    font-size: 15px;
+  }
+  .description>span:nth-child(2) {
+    font-size: 15px;
+  }
+  .input input::placeholder {
+    font-size: 12px;
+  }
+  .textarea::placeholder {
+    font-size: 12px;
+  }
+}
+
+
+@media (width < 492px) {
+  .root {
+    margin: 0px 16px;
+  }
+
+  .button_submit {
+    font-size: 16px;
+  }
+  .contacts>span{
+    font-size: 12px;
+  }
+  .description>span:nth-child(2) {
+    font-size: 12px;
+  }
 }

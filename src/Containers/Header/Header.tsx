@@ -57,7 +57,7 @@ function Header() {
 							className={styles.auth_menu}
 							onMouseLeave={() => setShowAuthMenu(false)}
 						>
-							<button>ПРОФИЛЬ</button>
+							<NavLink to={`/profile`}>ПРОФИЛЬ</NavLink>
 							<button onClick={onResetAuthorization}>ВЫЙТИ</button>
 						</div>
 					)}

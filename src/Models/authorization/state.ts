@@ -1,6 +1,10 @@
 import { createStore } from 'effector';
 import { AUTHORIZATION_FIELDS } from '../../Shared/constants';
-import { AuthorizationFormFields, ConfirmStatus, UserStatuses } from './types';
+import {
+	AuthorizationFormFields,
+	ConfirmStatus,
+	UserStatuses,
+} from './types';
 import {
 	resetAuthorizationFieldsEv,
 	resetAuthorizationStatusEv,

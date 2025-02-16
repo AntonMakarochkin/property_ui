@@ -18,10 +18,9 @@
 }
 
 .telegram {
-	width: 30px;
+	min-width: 30px;
 	height: 30px;
 	margin-left: auto;
-
 }
 
 .root .telegram {
@@ -133,4 +132,28 @@
 		font-size: 30px;
 	}
 	
+}
+
+@media (width < 1150px) {
+	.name {
+		font-size: 18px;
+	}
+	.root a {
+		font-size: 12px;
+	}
+	.root {
+		gap: 16px;
+	}
+	.telegram {
+		min-width: 23px;
+	}
+	.icon_profile {
+		width: 15px;
+	}
+}
+
+@media (width < 745px) {
+	.root {
+		display: none;
+	}
 }

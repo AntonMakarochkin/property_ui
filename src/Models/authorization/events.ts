@@ -11,3 +11,5 @@ export const resetConfirmStatusEv = createEvent();
 export const resetUserEv = createEvent();
 
 export const changeModalOpenEv = createEvent<boolean>();
+
+export const changeUserFieldsEv = createEvent<[string, string]>();

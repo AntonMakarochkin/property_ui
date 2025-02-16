@@ -49,7 +49,7 @@ export default function registration(app, pool) {
 	app.post('/add_user', async (req, res) => {
 		const { user } = req.body;
 		pool
-			.query('INSERT INTO property_users SET ?', {...user, role: 'user'})
+			.query('INSERT INTO property_users SET ?', { ...user, role: 'user' })
 			.then((data) => {
 				if (data[0]) {
 					res.json({ message: 'user successfully added' });
@@ -57,5 +57,22 @@ export default function registration(app, pool) {
 				}
 				res.json({ message: 'error' });
 			});
+	});
+
+	app.post('/change_user', async (req, res) => {
+		const { user } = req.body;
+		const { id, name, email, password } = user;
+		const sqlRequest = updateTable({
+			tableName: 'property_users',
+			id,
+			data: { name, email, password },
+		});
+		pool.query(sqlRequest).then((data) => {
+			if (data[0]) {
+				res.json({ message: 'user successfully changed' });
+				return;
+			}
+			res.json({ message: 'error' });
+		});
 	});
 }

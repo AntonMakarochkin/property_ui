@@ -9,7 +9,8 @@ export async function fetchApartments(filters: Filter): Promise<any[]> {
   const { data } = response;
   return fetchApartmentsAdapter(data);
 }
-
+//http://91.197.98.253
+//http://localhost
 export async function fetchAddApartment(params: any) {
 	const { plan, photos, ...fields } = params;
 	const formData = new FormData();

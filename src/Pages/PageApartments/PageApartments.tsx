@@ -13,6 +13,8 @@ import { getApartmentsFx } from '../../Models/apartments/effects';
 import Loader from '../../Components/Loader';
 import { getResidencesHandbookFx } from '../../Models/residences/effects';
 import HeaderBanner from '../../Containers/HeaderBanner';
+import HeaderMobile from '../../Containers/HeaderMobile';
+import ApartmentSwiper from '../../Containers/ApartmentSwiper';
 function PageApartments() {
 	const [apartments] = useUnit([$apartments]);
 	const { loading, searching } = useApartmentsFilters();
@@ -26,6 +28,8 @@ function PageApartments() {
 	return (
 		<div className={clsx(styles.root)}>
 			<Header />
+			<HeaderMobile />
+			<ApartmentSwiper />
 			<HeaderBanner />
 			<ApartmentFilters />
 			<FormFloatAdd />

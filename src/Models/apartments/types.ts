@@ -1,3 +1,10 @@
+export type Photo = {
+	id: number;
+	parentId: string;
+	type: string;
+	url: string;
+}
+
 export type Apartment = {
 	flat: string;
 	floor: string;
@@ -10,6 +17,7 @@ export type Apartment = {
 	url: string;
 	year: string;
 	rooms: string;
+	photos: Photo[];
 };
 
 export type Filter = {

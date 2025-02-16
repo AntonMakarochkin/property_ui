@@ -1,11 +1,13 @@
 import clsx from 'clsx';
 import styles from './PageContacts.module.css';
 import Header from '../../Containers/Header';
+import HeaderMobile from '../../Containers/HeaderMobile';
 
 function PageContacts() {
 	return (
 		<div className={clsx(styles.root)}>
-			<Header />
+			<Header /> 
+			<HeaderMobile />
 			<div className={styles.content}>
 				<div className={styles.container}>
 					<div className={styles.address}>

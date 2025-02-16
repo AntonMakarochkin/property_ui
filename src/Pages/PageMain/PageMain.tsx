@@ -8,6 +8,7 @@ import Consultation from '../../Containers/Consultation';
 import { useEffect } from 'react';
 import { getResidencesFx } from '../../Models/residences/effects';
 import HeaderBanner from '../../Containers/HeaderBanner';
+import HeaderMobile from '../../Containers/HeaderMobile';
 
 function PageMain() {
 	useEffect(() => {
@@ -16,6 +17,7 @@ function PageMain() {
 	return (
 		<div className={clsx(styles.root)}>
 			<Header />
+			<HeaderMobile />
 			<HeaderBanner />
       <Consultation />
 			<Benefits />

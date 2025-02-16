@@ -40,3 +40,5 @@ export const $searching = createStore<boolean>(false).on(
 	toggleSearchingEv,
 	(_, value) => value,
 );
+
+export const $currentApartment = createStore<Partial<Apartment>>({})

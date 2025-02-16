@@ -1,0 +1,60 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+  width: 100%;
+}
+
+.title {
+  padding: 16px;
+  color: #9b9b9b;
+  font-size: 16px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: "Unbounded";
+  border-top: 1px solid #e5e5e5;
+  color: #9b9b9b;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.root > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+	text-decoration: none;
+	font-size: 16px;
+	color: #9b9b9b;
+	padding: 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.root a:hover {
+	color: #000;
+	transition: 0.3s;
+}
+
+.root .active {
+	color: #000;
+}
+
+:is(.button, a ) .icon {
+  width: 10px;
+  height: 10px;
+  --icon-fill-color: #9b9b9b
+}
+
+
+.button:hover{
+  color: #000;
+  background-color: transparent;
+}

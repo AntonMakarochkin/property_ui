@@ -36,7 +36,7 @@ function Consultation() {
 		<div className={styles.root}>
 			<div className={styles.information}>
 				<div className={styles.description}>
-					<span> Сделаем бесплатный подбор недвижимости</span>
+					<span>Сделаем бесплатный подбор недвижимости</span>
 					<span>Расскажите, что ищете. Мы подберем подходящии варианты</span>
 				</div>
 				<div className={styles.contacts}>
@@ -77,7 +77,7 @@ function Consultation() {
 					onChange={handlerChangeInput}
 					outline
 					value={fields.phone}
-					className={clsx(styles.input, {
+					className={clsx(styles.input, styles.phone, {
 						[styles.validate_error]: errors.includes('phone'),
 					})}
 					autoComplete="off"

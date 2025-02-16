@@ -1,12 +1,13 @@
 import { ApartmentCardProps } from './types';
 
 import styles from './ApartmentCard.module.css';
+import { setCurrentApartmentEv } from '../../Models/apartments/events';
 
 function ApartmentCard({ cardInfo }: ApartmentCardProps) {
 	const { floor, residence, m2, price, url, year, rooms } = cardInfo;
 	const meterPrice = Number(price.replace(" ", '')) / Number(m2);
 	return (
-		<div className={styles.root}>
+		<button className={styles.root} onClick={() => setCurrentApartmentEv(cardInfo)}>
 			<div className={styles.title}>
 				<span>{residence}</span>
 				<span className={styles.build}>Athens</span>
@@ -21,7 +22,7 @@ function ApartmentCard({ cardInfo }: ApartmentCardProps) {
 				<span>Год сдачи {year}</span>
 				<span>{floor}/17 этаж</span>
 			</div>
-		</div>
+		</button>
 	);
 }
 

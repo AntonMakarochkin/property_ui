@@ -8,6 +8,7 @@ import PageResidenceAdd from "./Pages/PageResidenceAdd/PageResidenceAdd.tsx";
 import './Models/index.ts';
 import "./index.css";
 import PageContacts from "./Pages/PageContacts/PageContacts.tsx";
+import PageProfile from "./Pages/PageProfile/PageProfile.tsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/contacts",
     element: <PageContacts />,
+  },
+  {
+    path: "/profile",
+    element: <PageProfile />,
   },
 ]);
 createRoot(document.getElementById("root")!).render(

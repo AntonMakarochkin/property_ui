@@ -85,24 +85,34 @@ export default function flats(app, pool) {
 			});
 		});
 	});
-	app.get('/apartments/get_all', function (req, res) {
-		// const {priceFrom, rooms} = req.query;
+	app.get('/apartments/get_all', async function (req, res) {
 
-		console.log(convertFiltersToSQL(req.query));
 		const sqlString =
 			convertFiltersToSQL(req.query).length > 0
 				? `(SELECT * FROM property_apartments WHERE ${convertFiltersToSQL(
 						req.query,
 				  )}) AS property_apartments`
 				: 'property_apartments';
-		pool
-			.query(
-				`SELECT * FROM ${sqlString}
+		const [apartments] = await pool.query(
+			`SELECT * FROM ${sqlString}
 				INNER JOIN property_photos ON property_apartments.id = property_photos.parentId 
 				WHERE property_photos.type = "scheme"`,
-			)
-			.then((data) => {
-				res.json(data[0]);
-			});
+		);
+
+		const apartmentsIds = apartments.map((item) => item.parentId).join(', ');
+		const apartmentCondition = apartmentsIds.length > 0 ?  `WHERE parentId IN (${apartmentsIds})` : '';
+		const [photos] = await pool.query(
+			`SELECT * FROM property_photos ${apartmentCondition}`,
+		);
+
+		const modifiedApartments = apartments.map((item) => {
+			return {
+				...item,
+				photos: photos.filter(
+					(photo) => photo.parentId === item.parentId && photo.type === 'photo',
+				),
+			};
+		});
+		return res.json(modifiedApartments);
 	});
 }
