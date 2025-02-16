@@ -1,9 +1,7 @@
 import styles from './HeaderMobile.module.css';
 import clsx from 'clsx';
 import {
-	AngleRight,
 	LogoTelegram,
-	Profile,
 	SymbolDelete,
 } from '../../Components/Icons';
 import Authorization from '../Authorization';
